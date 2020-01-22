@@ -1,0 +1,59 @@
+setwd('/Users/xwang/Desktop/CSHL_Ware/chip_seq/Sorghum_bicolor_encode/peaks/homer/anno/v3')
+anno_cat<-read.table('G1_G3_noP_P_H3_anno_v3.txt',sep='\t',header=TRUE)
+
+
+attach(anno_cat)
+
+library(plotly)
+
+p_input<-plot_ly() %>%
+add_pie(anno_cat,labels=~Cat, values=~ G1_noP_K4me3_H3_commonPeakAnno, domain = list(x = c(0, 0.2), y = c(0.5, 0.9)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G1_P_K4me3_H3_commonPeakAnno, domain = list(x = c(0.25, 0.45), y = c(0.5, 0.9)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G1_noP_K27me3_H3_commonPeakAnno, domain = list(x = c(0.5, 0.7), y = c(0.5, 0.9)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G1_P_K27me3_H3_commonPeakAnno, domain = list(x = c(0.75, 0.95), y = c(0.5, 0.9)))%>%
+
+
+add_pie(anno_cat,labels=~Cat, values=~ G3_noP_K4me3_H3_commonPeakAnno, domain = list(x = c(0, 0.2), y = c(0, 0.4)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G3_P_K4me3_H3_commonPeakAnno, domain = list(x = c(0.25, 0.45), y = c(0, 0.4)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G3_noP_K27me3_H3_commonPeakAnno,domain = list(x = c(0.5, 0.7), y = c(0, 0.4)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G3_P_K27me3_H3_commonPeakAnno,domain = list(x = c(0.75, 0.95), y = c(0, 0.4)))%>%
+# layout(title = "Basic Pie Chart using Plotly")
+layout(
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         annotations=list(
+         list(x=0.105, y=0.92, text='<b>G1_noP_H3K4me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x=0.355, y=0.92, text='<b>G1_P_H3K4me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x=0.605, y=0.92, text='<b>G1_noP_H3K27me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x=0.855, y=0.92, text='<b>G1_P_H3K27me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x=0.105, y=0.42, text='<b>G3_noP_H3K4me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x= 0.355, y=0.42, text='<b>G3_P_H3K4me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x= 0.605, y=0.42, text='<b>G3_noP_H3K27me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16)),
+         list(x= 0.855, y=0.42, text='<b>G3_P_H3K27me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=16))
+         ) )  
+      
+      
+# chart_link <- plotly_POST(p_input)
+
+
+
+# G3_P:
+
+plot_ly() %>%
+add_pie(anno_cat,labels=~Cat, values=~ G3_P_K4me3_H3_commonPeakAnno,domain = list(x = c(0, 0.4), y = c(0.4, 1)))%>%
+add_pie(anno_cat,labels=~Cat, values=~ G3_P_K27me3_H3_commonPeakAnno,domain = list(x = c(0.5, 1), y = c(0.4, 1)))%>%
+
+# layout(
+         # xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         # yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+layout(
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         annotations=list(
+         list(x=0.200, y=0.30, text='<b>H3K4me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=12)),
+         list(x=0.755, y=0.30, text='<b>H3K27me3</b>', showarrow=FALSE, xref='paper',yref='paper',yanchor='bottom',xanchor='center',font=list(family='Times New Roman',size=12))  
+         ))
+         
+         
+         

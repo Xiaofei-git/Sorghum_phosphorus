@@ -1,0 +1,7 @@
+#Tss of all genes are sorted based on their expression levels (FPKM) from low to high, Every set should have 3185 genes if divided into five sets.
+#Chr Position Strand 
+7 3091879 1
+2 14833915 1
+8 118579 1
+1 68198134 -1
+1 58889708 0

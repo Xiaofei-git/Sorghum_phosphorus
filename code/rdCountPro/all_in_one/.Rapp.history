@@ -1,0 +1,28 @@
+x<-scan()
+x
+<-scan()
+y<-scan()
+y
+plot(x,y)
+?plot
+plot(x,y,"l")
+plot(x,y,"h")
+plot(x[:10],y[:10],"h")
+plot(x[1:10],y[1:10],"h")
+plot(x[1:10],y[1:10],"h",col = "red", lwd = 30)
+plot(x[1:10],y[1:10],"h",col = "red", lwd = 10)
+plot(x[1:10],y[1:10],"h",col = "red", lwd = 5)
+plot(x[1:10],y[1:10],"h",col = "red", lwd = 3)
+library(agricolae)
+setwd("~/Desktop/CSHL_Ware/chip_seq/Sorghum_bicolor_encode/codes/rdCountPro/all_in_one")
+G3_P_K27me3_rep2<-read.table("G3_P_K27me3_rep2_goodAllInOne_rdCount.txt",header=TRUE)
+dim(G3_P_K27me3_rep2)
+head(G3_P_K27me3_rep2)
+G3_P_K27me3_rep2_allInOne_RdC <- as.vector(colSums(G3_P_K27me3_rep2))
+dim(G3_P_K27me3_rep2)
+dim(G3_P_K27me3_rep2_allInOne_RdC)
+length(G3_P_K27me3_rep2_allInOne_RdC)
+G3_P_K27me3_rep2_allInOne_RdC[4503:]
+G3_P_K27me3_rep2_allInOne_RdC[4503:4504]
+plot(1;4500, G3_P_K27me3_rep2_allInOne_RdC[5:4504], xlab="X",ylab="Read Count",col='red',type="l", lwd =2.5)
+plot(1:4500, G3_P_K27me3_rep2_allInOne_RdC[5:4504], xlab="X",ylab="Read Count",col='red',type="l", lwd =2.5)

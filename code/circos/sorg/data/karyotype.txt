@@ -1,0 +1,10 @@
+chr	-	chr10	10	0	60981646	chr10
+chr	-	chr7	7	0	64342021	chr7
+chr	-	chr8	8	0	55460251	chr8
+chr	-	chr6	6	0	62208784	chr6
+chr	-	chr3	3	0	74441160	chr3
+chr	-	chr2	2	0	77932606	chr2
+chr	-	chr5	5	0	62352331	chr5
+chr	-	chr4	4	0	68034345	chr4
+chr	-	chr1	1	0	73840631	chr1
+chr	-	chr9	9	0	59635592	chr9

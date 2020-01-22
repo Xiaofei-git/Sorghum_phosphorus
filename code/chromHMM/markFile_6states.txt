@@ -1,0 +1,6 @@
+Rep1	H3K27me3	H3K27me3_rep1.sorted.bam	H3_rep1.sorted.bam
+Rep2	H3K27me3	H3K27me3_rep2.sorted.bam	H3_rep2.sorted.bam
+Rep1	H3K4me3	H3K4me3_rep1.sorted.bam	H3_rep1.sorted.bam
+Rep2	H3K4me3	H3K4me3_rep2.sorted.bam	H3_rep2.sorted.bam
+Rep1	MNase	MNase_LD_rep1.bam	MNase_HD_rep1.bam
+Rep2	MNase	MNase_LD_rep2.bam	MNase_HD_rep2.bam

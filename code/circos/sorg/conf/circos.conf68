@@ -1,0 +1,153 @@
+
+karyotype =/sonas-hs/ware/hpc_norepl/data/xwang/sorghum_encode/circos/sorg/data/karyotype.txt
+
+chromosomes_units           = 1000000
+#chromosome_units = 0.001r
+#chromosomes_units           = 500000
+chromosomes_order     =chr1;chr2;chr3;chr4;chr5;chr6;chr7;chr8;chr9;chr10
+
+chromosomes_display_default = yes
+
+label_size = 14p
+
+
+# ? why centromeres are not been drawn, fixed because gave the wrong chr. names
+<highlights>
+    ideogram = yes
+    <highlight>
+        file       = ../data/centromeres.txt
+        stroke_thickness = 20
+        stroke_color = black
+        fill_color = blue
+        z = 10
+    </highlight>
+</highlights>
+
+<plots>
+    show             = yes
+    margin = 0.03u
+    orientation = in
+    thickness = 2
+    padding = 0
+    stroke_thickness = 1
+    #color=ylorrd-9-seq-rev,ylgnbu-9-seq
+    color  = spectral-9-div-rev
+    #color  = spectral-9-div
+    #color   = black,grey,red,orange,yellow,lime,green,blue,purple  
+    #color   = optviolet,chr19,blue,green,yellow,orange,red,red
+# v3gene
+
+    #gene density 
+    <plot>
+        type = heatmap
+        file = ../data/gene.wiggle
+        r0 = 0.93r
+        r1 = 0.98r
+        #?
+        #min= 0
+        #max=76
+        #?
+        scale_log_base = 0.5
+    </plot>      
+    #genef
+    <plot>
+        type = heatmap
+        file = ../data/genef.wiggle
+        r0 = 0.87r
+        r1 = 0.92r
+        #min = 0
+        #max = 61
+        scale_log_base = 0.5
+    </plot>
+    # Methylation level CHH
+    <plot>
+        type = heatmap
+        file = ../data/CHH.wiggle
+        r0 = 0.81r
+        r1 = 0.86r
+        #min= 0
+        #max= 137
+        scale_log_base = 0.5
+    </plot>
+    # Methylation level CHG
+    <plot>
+        type = heatmap
+        file = ../data/CHG.wiggle
+        r0 = 0.75r
+        r1 = 0.80r
+        #min= 0
+        #max=624
+        scale_log_base = 0.5
+    </plot>
+    # Methylation level CG
+    <plot>
+        type = heatmap
+        file = ../data/CG.wiggle
+        r0 = 0.69r
+        r1 = 0.74r
+        scale_log_base = 0.5
+    </plot>
+    # small rna 21
+    <plot>
+        type = heatmap
+        file = ../data/srna21.wiggle
+        r0 = 0.63r
+        r1 = 0.68r
+        scale_log_base = 0.5
+    </plot>
+    # small rna 24
+    <plot>
+        type = heatmap
+        file = ../data/srna24.wiggle
+        r0 = 0.57r
+        r1 = 0.62r
+        scale_log_base = 0.5
+    </plot>
+    # plot mark H3K4me3
+    <plot>
+        type = heatmap
+        file = ../data/G3_P_K4me3_H3_peakDensity_chr.bed
+        r0 = 0.51r
+        r1 = 0.56r
+        scale_log_base = 0.5
+    </plot>
+    # H3K27me3
+    <plot>
+        type = heatmap
+        file = ../data/G3_P_K27me3_H3_peakDensity_chr.bed
+        r0 = 0.45r
+        r1 = 0.50r
+        scale_log_base = 0.5
+    </plot>
+</plots>
+
+<<include /sonas-hs/ware/hpc_norepl/data/xwang/sorghum_encode/circos/sorg/conf/ideogram.conf>>
+
+<<include /sonas-hs/ware/hpc_norepl/data/xwang/sorghum_encode/circos/sorg/conf/ticks.conf>>
+
+<image>
+dir = ../
+file  = sorg_test1_new.png
+png = yes
+24bit = yes
+radius   = 1500p
+background     = white #transparent #white
+angle_offset   = -90
+#auto_alpha_steps* = 10
+</image>
+
+<colors>
+<<include /sonas-hs/ware/hpc/home/xwang/software/circos/circos-0.67/etc/colors.conf>>
+#<<include /sonas-hs/ware/hpc_norepl/data/xwang/sorghum_encode/circos/sorg/conf/colors.conf>>
+#<<include /sonas-hs/ware/hpc/home/xwang/software/circos/circos-0.67/etc/colors_fonts_patterns.conf>>
+</colors>
+
+<fonts>
+<<include /sonas-hs/ware/hpc/home/xwang/software/circos/circos-0.67/etc/fonts.conf>>
+</fonts>
+
+#<<include /sonas-hs/ware/hpc/data/bwang/maize/combined_1st2nd/fusion_circos/housekeeping.conf>>
+<<include /sonas-hs/ware/hpc/home/xwang/software/circos/circos-0.67/etc/housekeeping.conf>> 
+data_out_of_range* = trim
+
+
